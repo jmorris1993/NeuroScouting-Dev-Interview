@@ -7,7 +7,7 @@ The way I approached this problem was to first create a list representation
 of the values of the tree. (valueCalc and finalListBuilder functions) Then convert the list representation to a tree
 data structure. (createTree function) The main function uses all the other functions to create the final tree.
 
-"""Sample Output for print main(5)."""
+"""Sample Output for print main(5). Make sure to view it raw to see the spaces between the numbers."""
 """
                 1
             1
