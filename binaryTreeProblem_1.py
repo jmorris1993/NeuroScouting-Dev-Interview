@@ -57,8 +57,58 @@ def finalListBuilder(depth):
     return finalList
 
     
+"""Created a binary tree data structure, since Python doesn't have it built in.
+"""
+class BinaryTree:
+    def __init__(self,rootObj):
+        self.key = rootObj
+        self.leftChild = None
+        self.rightChild = None
+        
+    def insertLeft(self, newNode):
+        if self.leftChild == None:
+            self.leftChild = BinaryTree(newNode)
+        else:
+            t = BinaryTree(newNode)
+            t.leftChild = self.leftChild
+            self.leftChild = t
     
+    def insertRight(self, newNode):
+        if self.rightChild == None:
+            self.rightChild = BinaryTree(newNode)
+        
+        else:
+            t = BinaryTree(newNode)
+            t.rightChild = self.rightChild
+            self.rightChild = t
     
+    def getRightChild(self):
+        return self.rightChild
+        
+    def getLeftChild(self):
+        return self.leftChild
+        
+    def setRootVal(self,obj):
+        self.key = obj
+        
+    def getRootVal(self):
+        return self.key
+    
+    def __str__(self, depth=0):
+        ret = ""
+
+        # Print right branch
+        if self.rightChild != None:
+            ret += self.rightChild.__str__(depth + 1)
+
+        # Print own value
+        ret += "\n" + ("    "*depth) + str(self.key)
+
+        # Print left branch
+        if self.leftChild != None:
+            ret += self.leftChild.__str__(depth + 1)
+
+        return ret
     
     
     
