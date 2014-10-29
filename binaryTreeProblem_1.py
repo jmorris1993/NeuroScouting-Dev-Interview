@@ -45,7 +45,17 @@ def valueCalc(depth,alist):
 
 
 
-    
+"""Creates the list representation of the values of the final tree.
+"""
+
+def finalListBuilder(depth):
+    finalList = []
+    for i in range(1,depth+1):
+        for j in valueCalc(i,[1]):
+            finalList.append(j)
+        
+    return finalList
+
     
     
     
