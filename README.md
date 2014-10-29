@@ -3,7 +3,7 @@ NeuroScouting-Dev-Interview
 
 Interview questions for dev summer intern position
 
-Problem 1: Interview_tree
+Problem 1: binaryTreeProblem_1.py
 
 The way I approached this problem was to first create a list representation
 of the values of the tree. (valueCalc and finalListBuilder functions) Then convert the list representation to a tree
