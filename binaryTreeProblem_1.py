@@ -136,7 +136,63 @@ def createTree(root, alist, start, size):
     
     
     
+"""Main.
+"""
+def main(depth):
+    if depth < 1:
+        return None
     
+    
+    
+    else:
+        tree = BinaryTree(1)  
+        finalList = finalListBuilder(depth)
+        
+        createTree(tree, finalList, 0, len(finalList))
+        
+        return tree
+
+"""Change Arguments here. Will print to console.
+"""
+print main(5) 
+
+
+
+"""Sample Output for print main(5)."""
+"""
+                1
+            1
+                4
+        1
+                4
+            3
+                6
+    1
+                6
+            3
+                7
+        2
+                7
+            4
+                8
+1
+                8
+            4
+                7
+        2
+                7
+            3
+                6
+    1
+                6
+            3
+                4
+        1
+                4
+            1
+                1
+
+"""
     
     
     
