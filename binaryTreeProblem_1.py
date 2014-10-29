@@ -109,8 +109,30 @@ class BinaryTree:
             ret += self.leftChild.__str__(depth + 1)
 
         return ret
+  
+  
+"""Creates the tree from the list representation
+I used the level order insert for this.
+"""
+def createTree(root, alist, start, size):
+    left = 2*start+1
+    right = 2*start+2
     
+    if left > size or right > size:
+        return;
     
+    if root == None:
+        tobj = BinaryTree(alist[start])
+        root = tobj
+        
+    if root.getRightChild() == None and root.getLeftChild() == None:
+        if left < size:
+            root.insertLeft(alist[left])
+        if right < size:
+            root.insertRight(alist[right])
+            
+    createTree(root.getLeftChild(), alist, left, size)
+    createTree(root.getRightChild(),alist, right, size)   
     
     
     
